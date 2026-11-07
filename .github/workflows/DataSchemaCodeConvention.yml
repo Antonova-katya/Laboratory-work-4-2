@@ -1,5 +1,6 @@
 name: SQL Linter
 on:
+
  push:
     branches: laboratory-work-4
 jobs:
