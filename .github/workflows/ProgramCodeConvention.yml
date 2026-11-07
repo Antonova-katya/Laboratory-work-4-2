@@ -1,21 +1,16 @@
-name: Program Code Convention
-
+name: Program Code Linter
 on:
   push:
-  pull_request:
-  workflow_dispatch:
-
+    branches-ignore: [master, main]
 jobs:
-  flake8-lint:
+  ProgramCodeLinter:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Install flake8
-        run: pip install flake8
-      - name: Lint program module
-        run: flake8 $GITHUB_WORKSPACE/ProgramCode.py
+      - name: Checkout Code in Repository
+        uses: actions/checkout@v3
+      - name: Lint Program Code
+        uses: github/super-linter@v4
+        env:
+          VALIDATE_PYTHON_FLAKE8: true
+          FILTER_REGEX_INCLUDE: ./ProgramCode\.py
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
