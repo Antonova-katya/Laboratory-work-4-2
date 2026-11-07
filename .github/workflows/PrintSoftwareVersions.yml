@@ -21,7 +21,7 @@ jobs:
         runs-on: windows-latest
         needs: [PrintLanguageVersions]
         steps:
-            - name: Install PostgreSQL 16
+            - name: Install PostgreSQL 17
               shell: pwsh
               run: choco install postgresql16 --params '/Password:postgres' -y --no-progress
             - name: Print PostgreSQL Version
