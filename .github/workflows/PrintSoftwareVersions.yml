@@ -3,7 +3,7 @@ on:
  push:
    branches: laboratory-work-4
 jobs:
-    PrintLanguageVersions:
+    PrintSoftwareVersions:
         runs-on: windows-latest
         steps:
             - name: Print Python Version
@@ -19,7 +19,7 @@ jobs:
                 python -c "import cv2; print('OpenCV', cv2.__version__)"
     PrintDBMSVersions:
         runs-on: windows-latest
-        needs: [PrintLanguageVersions]
+        needs: [PrintSoftwareVersions]
         steps:
             - name: Install PostgreSQL 17
               shell: pwsh
