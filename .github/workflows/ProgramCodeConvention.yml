@@ -1,7 +1,7 @@
 name: Program Code Linter
 on:
   push:
-    branches-ignore: [master, main]
+    branches: laboratory-work-4
 jobs:
   ProgramCodeLinter:
     runs-on: ubuntu-latest
