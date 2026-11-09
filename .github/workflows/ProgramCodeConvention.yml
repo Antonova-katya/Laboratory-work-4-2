@@ -1,7 +1,7 @@
 name: Program Code Convention
 on:
   push:
-    branches-ignore: main
+    branches-ignore: [master, main]
 jobs:
   ProgramCodeLinter:
     runs-on: ubuntu-latest
